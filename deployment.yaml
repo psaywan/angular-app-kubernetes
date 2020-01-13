@@ -14,7 +14,7 @@ spec:
     spec: 
       containers: 
       - name: angularapp
-        image: mydemo1.azurecr.io/angularapp:#{Build.BuildNumber}#
+        image: mydemo1.azurecr.io/psaywan/angular-app-kubernetes:#{Build.BuildNumber}#
         ports: 
         - containerPort: 8083 
 --- 
