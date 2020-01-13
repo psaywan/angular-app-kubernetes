@@ -14,9 +14,10 @@ spec:
     spec: 
       containers: 
       - name: angular 
-        image: mydemo1.azurecr.io/psaywan/angular-app-kubernetes:#{Build.BuildNumber}#
+        image: mydemo1.azurecr.io/psaywan/angularapp:#{Build.BuildNumber}#
         ports: 
         - containerPort: 80 
+          protocol: TCP
 --- 
 # https://kubernetes.io/docs/concepts/services-networking/service/#defining-a-service  
 kind: Service 
@@ -30,4 +31,5 @@ spec:
   - protocol: TCP 
     port: 80 
     targetPort: 80 
+    name: grpc
   type: LoadBalancer 
