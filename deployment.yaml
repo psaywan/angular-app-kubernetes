@@ -5,18 +5,18 @@ metadata:
 spec: 
   selector: 
     matchLabels: 
-      app: angularapp
+      app: angular
   replicas: 5 # tells deployment to run 2 pods matching the template 
   template:
     metadata: 
       labels: 
-        app: angularapp
+        app: angular
     spec: 
       containers: 
-      - name: angularapp
+      - name: angular-app-kubernetes
         image: mydemo1.azurecr.io/psaywan/angular-app-kubernetes:#{Build.BuildNumber}#
         ports: 
-        - containerPort: 8083 
+        - containerPort: 80
 --- 
 # https://kubernetes.io/docs/concepts/services-networking/service/#defining-a-service  
 kind: Service 
@@ -28,6 +28,6 @@ spec:
     app: angularapp
   ports: 
   - protocol: TCP 
-    port: 8083 
-    targetPort: 8083 
+    port: 80
+    targetPort: 80 
   type: LoadBalancer 
