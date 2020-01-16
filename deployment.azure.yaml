@@ -13,7 +13,7 @@ spec:
         app: angulr 
     spec: 
       containers: 
-      - name: angulr 
+      - name: angular-app-kubernetes 
         image: mydemo1.azurecr.io/psaywan/angular-app-kubernetes:#{Build.BuildId}#
         ports: 
         - containerPort: 80 
