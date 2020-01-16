@@ -14,7 +14,7 @@ spec:
     spec: 
       containers: 
       - name: angular 
-        image: mydemo1.azurecr.io/psaywan/angularapp:#{Build.BuildId}#
+        image: mydemo1.azurecr.io/psaywan/angular-app-kubernetes:#{Build.BuildId}#
         ports: 
         - containerPort: 80 
           protocol: TCP
